@@ -4,6 +4,8 @@ The `Slider` component is a completely unstyled customizable UI element for Reac
 
 This component relies on the `motion` library as a dependency.
 
+<b>[Live examples](https://blur-ui-storybook.vercel.app/?path=/docs/components-slider--docs)</b>
+
 ## Requirements
 
 - `react` >= 16.0.0
