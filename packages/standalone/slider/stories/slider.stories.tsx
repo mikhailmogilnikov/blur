@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
 
-import { Slider } from '@blur/slider';
+import { Slider } from '@blur-ui/slider';
 
 export default {
   title: 'Components/Slider',
