@@ -1,7 +1,7 @@
 {
   "name": "@blur-ui/slider",
-  "description": "The Slider component for React",
-  "tags": [
+  "description": "The Slider component for React with ios-styled animations",
+  "keywords": [
     "slider",
     "react",
     "motion",
@@ -10,13 +10,22 @@
     "ios"
   ],
   "author": "Mikhail Mogilnikov",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "license": "MIT",
   "private": false,
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikhailmogilnikov/blur.git",
+    "directory": "packages/standalone/slider"
+  },
+  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/slider",
+  "bugs": {
+    "url": "https://github.com/mikhailmogilnikov/blur/issues"
+  },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
