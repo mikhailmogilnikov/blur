@@ -1,0 +1,22 @@
+{
+  "name": "@blur/eslint-config",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./node": "./node.js",
+    "./react": "./react.js"
+  },
+  "peerDependencies": {
+    "eslint": ">= 9"
+  },
+  "devDependencies": {
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "typescript": "^5.1.3",
+    "typescript-eslint": "^8.19.0"
+  }
+}

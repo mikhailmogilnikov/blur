@@ -1,0 +1,11 @@
+{
+  "extends": "@blur/typescript-config/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
+    "jsx": "react-jsx"
+  },
+  "include": ["src/**/*", "stories/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

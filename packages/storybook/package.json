@@ -1,0 +1,40 @@
+{
+  "name": "@blur/storybook",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": [
+    "storybook"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "bunx storybook dev -p 6006",
+    "build": "bunx storybook build",
+    "start": "bunx dlx http-server storybook-static"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.0-beta.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0-beta.9"
+  },
+  "devDependencies": {
+    "@blur/eslint-config": "workspace:*",
+    "@blur/typescript-config": "workspace:*",
+    "@storybook/addon-a11y": "^8.4.7",
+    "@storybook/addon-actions": "^8.4.7",
+    "@storybook/addon-docs": "^8.4.7",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-links": "^8.4.7",
+    "@storybook/cli": "^8.4.7",
+    "@storybook/manager-api": "^8.4.7",
+    "@storybook/preview-api": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/theming": "^8.4.7",
+    "@vitejs/plugin-react": "^4.3.4",
+    "remark-gfm": "^4.0.0",
+    "storybook": "^8.4.7",
+    "storybook-dark-mode": "^4.0.2",
+    "vite": "^5.4.11"
+  }
+}

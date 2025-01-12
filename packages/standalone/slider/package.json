@@ -1,0 +1,50 @@
+{
+  "name": "@blur-ui/slider",
+  "description": "The Slider component for React",
+  "tags": [
+    "slider",
+    "react",
+    "motion",
+    "ui",
+    "component",
+    "ios"
+  ],
+  "author": "Mikhail Mogilnikov",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "motion": ">=11.15.0",
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "dependencies": {
+    "motion": "^11.15.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@blur/typescript-config": "workspace:*",
+    "@blur/eslint-config": "workspace:*",
+    "eslint": "^9",
+    "tsup": "^8.3.5"
+  }
+}
