@@ -32,7 +32,10 @@
     "build": "tsup src/index.ts --format cjs,esm --dts"
   },
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.js"
+    }
   },
   "publishConfig": {
     "access": "public"
