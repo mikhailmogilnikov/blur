@@ -5,11 +5,11 @@
   --bg-color: #0f0f0f;
 }
 
-.dark .sbdocs-content h1 {
-  color: #fff;
-}
-
-.dark .sbdocs-content h5 {
+.dark h1,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark p {
   color: #fff;
 }
 
