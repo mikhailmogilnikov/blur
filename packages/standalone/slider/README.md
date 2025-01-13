@@ -16,13 +16,13 @@ This component relies on the `motion` library as a dependency.
 To install the `Slider` component, use npm or yarn:
 
 ```bash
-npm install @blur/slider
+npm install @blur-ui/slider
 ```
 
 or
 
 ```bash
-yarn add @blur/slider
+yarn add @blur-ui/slider
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ Here's a basic example of how to use the `Slider` component:
 
 ```tsx
 import React from 'react';
-import { Slider } from '@blur/slider';
+import { Slider } from '@blur-ui/slider';
 
 const App = () => {
   const handleValueChange = (value: number) => {
