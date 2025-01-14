@@ -1,0 +1,12 @@
+import { forwardRef } from "react";
+import { {{capitalize componentName}}Props } from "./types";
+
+export const {{capitalize componentName}} = forwardRef<HTMLDivElement, {{capitalize componentName}}Props>((props, ref) => {
+  const { Component, buildRootProps } = use{{capitalize componentName}}({...props, ref});
+
+  return (
+    <Component {...buildRootProps()} />
+  );
+});
+
+{{capitalize componentName}}.displayName = "Blur.{{capitalize componentName}}";

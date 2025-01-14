@@ -1,0 +1,25 @@
+import type { Meta } from '@storybook/react';
+
+import { {{capitalize componentName}} } from '@blur-ui/{{componentName}}';
+
+export default {
+  title: 'Components/{{capitalize componentName}}',
+  component: {{capitalize componentName}},
+  parameters: {
+    layout: 'centered',
+    controls: {},
+    docs: {
+      description: {
+        component:
+          'Description',
+      },
+    },
+  },
+  argTypes: {},
+  args: {},
+} as Meta<typeof {{capitalize componentName}}>;
+
+export const Default = {
+  argTypes: {},
+  args: {},
+};

@@ -1,0 +1,58 @@
+{
+  "name": "@blur-ui/{{packageName}}",
+  "description": "The {{packageName}} component for React.",
+  "keywords": [
+    "{{packageName}}",
+    "react",
+    "ui",
+    "component"
+  ],
+  "author": "Mikhail Mogilnikov",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikhailmogilnikov/blur.git",
+    "directory": "packages/{{outDir}}/{{packageName}}"
+  },
+  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/{{outDir}}/{{packageName}}",
+  "bugs": {
+    "url": "https://github.com/mikhailmogilnikov/blur/issues"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@blur/typescript-config": "workspace:*",
+    "@blur/eslint-config": "workspace:*",
+    "eslint": "^9",
+    "tsup": "^8.3.5"
+  }
+}

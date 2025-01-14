@@ -1,0 +1,24 @@
+import { useCallback } from "react";
+import { {{capitalize componentName}}Props } from "./types";
+
+export const use{{capitalize componentName}} = (props: {{capitalize componentName}}Props) => {
+  const {
+    ref, 
+    as = 'div', 
+    ...otherProps
+  } = props;
+
+  const Component = as;
+
+  const buildRootProps = useCallback(() => {
+    return {
+      ref,
+      ...otherProps,
+    };
+  }, [ref, otherProps]);
+
+  return {
+    Component,
+    buildRootProps,
+  };
+};

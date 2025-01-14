@@ -1,0 +1,33 @@
+name: CI
+ 
+on:
+  push:
+    branches: ["prod"]
+  pull_request:
+    types: [opened, synchronize]
+ 
+jobs:
+  build:
+    name: Build and Test
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+ 
+      - name: Setup Bun environment
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: 1.1.43
+ 
+      - name: Install dependencies
+        run: make i
+ 
+      - name: Build
+        run: make build
+ 
+      - name: Lint
+        run: make lint
