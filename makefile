@@ -13,6 +13,9 @@ make lint:
 make build:
 	bun run build
 
+make prepack:
+	npm run prepack
+	
 make publish:
 	bun run publish-packages
 

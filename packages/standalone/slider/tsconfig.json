@@ -1,5 +1,5 @@
 {
-  "extends": "@blur/typescript-config/react.json",
+  "extends": "@blur-ui/typescript-config/react.json",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",

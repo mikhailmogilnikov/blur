@@ -1,5 +1,5 @@
 {
-  "name": "@blur/eslint-config",
+  "name": "@blur-ui/eslint-config",
   "version": "1.0.0",
   "private": true,
   "type": "module",

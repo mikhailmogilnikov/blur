@@ -26,8 +26,5 @@ jobs:
       - name: Install dependencies
         run: make i
  
-      - name: Build
-        run: make build
- 
-      - name: Lint
-        run: make lint
+      - name: Running build, lint and test
+        run: make prepack
