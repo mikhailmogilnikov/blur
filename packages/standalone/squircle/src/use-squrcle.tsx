@@ -20,6 +20,7 @@ export const useSquircle = (props: UseSquircleProps) => {
     disableResize,
     disableSmoothing,
     style,
+    radius,
     wrapperClassName,
     ...domProps
   } = props;
@@ -37,6 +38,15 @@ export const useSquircle = (props: UseSquircleProps) => {
     if (!minBorderRadius || !width || !height || disableSmoothing) return undefined;
 
     const isHaveCustomStandaloneCorners = checkIsHaveCustomStandaloneCorners(squircleSize);
+
+    if (radius) {
+      return getSquirclePath({
+        cornerRadius: radius,
+        cornerSmoothing: smoothing,
+        width,
+        height,
+      });
+    }
 
     if (isHaveCustomStandaloneCorners) {
       return getSquirclePath({
@@ -57,11 +67,12 @@ export const useSquircle = (props: UseSquircleProps) => {
       width,
       height,
     });
-  }, [squircleSize, smoothing, disableSmoothing]);
+  }, [squircleSize, smoothing, disableSmoothing, radius]);
 
   const squircleStyle: CSSProperties = useMemo(() => {
     return {
       ...style,
+      borderRadius: radius,
       clipPath: squrcleClipPath ? `path('${squrcleClipPath}')` : undefined,
     };
   }, [squrcleClipPath, style]);

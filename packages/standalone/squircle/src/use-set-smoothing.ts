@@ -11,7 +11,11 @@ import {
 export const useSetSmoothing = (smoothing: number | undefined) => {
   const componentSmoothing = useMemo(() => {
     // If the smoothing is passed as a prop, use it
-    if (smoothing && smoothing >= MIN_SQUIRCLE_SMOOTHING && smoothing <= MAX_SQUIRCLE_SMOOTHING)
+    if (
+      typeof smoothing !== 'undefined' &&
+      smoothing >= MIN_SQUIRCLE_SMOOTHING &&
+      smoothing <= MAX_SQUIRCLE_SMOOTHING
+    )
       return smoothing;
 
     // If the smoothing is passed as a global CSS variable, use it

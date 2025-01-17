@@ -16,6 +16,17 @@ export default {
     },
   },
   argTypes: {
+    radius: {
+      name: 'radius',
+      description: 'The border radius for the squircle.',
+      type: 'number',
+      control: {
+        type: 'range',
+        min: 0,
+        max: 60,
+        step: 1,
+      },
+    },
     smoothing: {
       name: 'smoothing',
       description: 'The smoothing of the squircle. Can be a number between 0 and 1.',

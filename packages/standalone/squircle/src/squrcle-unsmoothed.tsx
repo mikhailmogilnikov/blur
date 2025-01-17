@@ -9,11 +9,13 @@ export const SquircleUnsmoothed = forwardRef<HTMLDivElement, SquircleProps>((pro
   const {
     asChild,
     wrapperClassName,
+    style,
 
     smoothing,
     resizeDelay,
     disableResize,
     disableSmoothing,
+    radius,
 
     ...restProps
   } = props;
@@ -23,10 +25,10 @@ export const SquircleUnsmoothed = forwardRef<HTMLDivElement, SquircleProps>((pro
   if (wrapperClassName) {
     return (
       <div className={wrapperClassName}>
-        <Component ref={ref} {...restProps} />
+        <Component ref={ref} {...restProps} style={{ ...style, borderRadius: radius }} />
       </div>
     );
   }
 
-  return <Component ref={ref} {...restProps} />;
+  return <Component ref={ref} {...restProps} style={{ ...style, borderRadius: radius }} />;
 });

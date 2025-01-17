@@ -34,16 +34,16 @@ export interface SquircleProps extends HTMLAttributes<HTMLDivElement> {
    * @default undefined
    */
   wrapperClassName?: string;
+  /**
+   * Define optional border radius for the squircle. If not provided, squircle will be get radius from the CSS.
+   */
+  radius?: number;
 }
 
 export type StaticSquircleProps = Omit<
   SquircleProps,
   'disableResize' | 'disableSmoothing' | 'resizeDelay'
 > & {
-  /**
-   * The border radius for the squircle.
-   */
-  radius: number;
   /**
    * The width for the squircle.
    */
