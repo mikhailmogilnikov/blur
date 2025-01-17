@@ -27,4 +27,4 @@ jobs:
         run: make i
  
       - name: Running build, lint and test
-        run: make prepack
+        run: make pre
