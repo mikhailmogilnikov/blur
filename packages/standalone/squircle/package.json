@@ -7,11 +7,32 @@
     "ui",
     "component"
   ],
-  "type": "module",
   "author": "Mikhail Mogilnikov",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mikhailmogilnikov/blur.git",
@@ -26,24 +47,6 @@
     "lint:fix": "eslint . --fix",
     "build": "tsup src/index.ts --format cjs,esm --dts"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./package.json": "./package.json"
-  },
-  "sideEffects": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
