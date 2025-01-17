@@ -86,6 +86,7 @@ export default {
 export const Default: StoryObj<typeof Squircle> = {
   argTypes: {},
   args: {
+    radius: 20,
     smoothing: 1,
     resizeDelay: 100,
     disableSmoothing: false,
