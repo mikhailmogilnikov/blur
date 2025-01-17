@@ -12,7 +12,7 @@
     "lint": "turbo lint",
     "test": "turbo test",
     "prepack": "turbo run build lint test",
-    "publish-packages": "npm run prepack && changeset version && changeset publish"
+    "publish-packages": "bun run prepack && changeset version && changeset publish"
   },
   "workspaces": [
     "apps/*",
@@ -31,11 +31,9 @@
     "@types/bun": "latest",
     "@types/react": "^19.0.4",
     "@types/react-dom": "^19.0.2",
-    "jsdom": "^26.0.0",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "turbo": "^2.3.3",
-    "typescript": "^5",
-    "vitest": "^2.1.8"
+    "typescript": "^5"
   }
 }

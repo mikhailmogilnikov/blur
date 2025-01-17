@@ -1,16 +1,14 @@
 {
-  "name": "@blur-ui/slider",
-  "description": "The Slider component for React with ios-styled animations",
+  "name": "@blur-ui/squircle",
+  "description": "The Squircle component for React",
   "keywords": [
-    "slider",
+    "squircle",
     "react",
-    "motion",
     "ui",
-    "component",
-    "ios"
+    "component"
   ],
   "author": "Mikhail Mogilnikov",
-  "version": "1.0.8",
+  "version": "1.0.0",
   "license": "MIT",
   "private": false,
   "type": "module",
@@ -20,9 +18,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mikhailmogilnikov/blur.git",
-    "directory": "packages/standalone/slider"
+    "directory": "packages/standalone/squircle"
   },
-  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/slider",
+  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/squircle",
   "bugs": {
     "url": "https://github.com/mikhailmogilnikov/blur/issues"
   },
@@ -44,12 +42,14 @@
     "dist"
   ],
   "peerDependencies": {
-    "motion": ">=11.15.0",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },
   "dependencies": {
-    "motion": "^11.15.0"
+    "@radix-ui/react-slot": "^1.1.1",
+    "figma-squircle": "^1.1.0",
+    "@blur-ui/js-utils": "workspace:*",
+    "@blur-ui/react-utils": "workspace:*"
   },
   "devDependencies": {
     "@blur-ui/typescript-config": "workspace:*",

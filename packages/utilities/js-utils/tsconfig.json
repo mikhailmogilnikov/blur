@@ -1,10 +1,10 @@
 {
-  "extends": "@blur-ui/typescript-config/react.json",
+  "extends": "@blur-ui/typescript-config/basic.json",
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": ".",
     "outDir": "dist"
   },
-  "include": ["src/**/*", "stories/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

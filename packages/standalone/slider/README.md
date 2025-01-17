@@ -6,6 +6,13 @@ This component relies on the `motion` library as a dependency.
 
 <b>[Live examples](https://blur-ui-storybook.vercel.app/?path=/docs/components-slider--docs)</b>
 
+## Features
+
+- Supports both horizontal and vertical orientations.
+- Provides smooth animations for track movement and stretch effects.
+- Fully unstyled and customizable.
+- RTL support.
+
 ## Requirements
 
 - `react` >= 16.0.0

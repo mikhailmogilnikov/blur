@@ -13,9 +13,11 @@ make lint:
 make build:
 	bun run build
 
-make prepack:
+make pre:
 	npm run prepack
 	
-make publish:
+make pub:
 	bun run publish-packages
 
+make clean-packages:
+	rm -rf node_modules

@@ -1,0 +1,14 @@
+{
+  "name": "@blur-ui/tsup-config",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./base": "./base.config.js",
+    "./react": "./react.config.js"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "tsup": "^8.3.5"
+  }
+}

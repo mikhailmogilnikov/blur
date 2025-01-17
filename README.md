@@ -4,22 +4,10 @@ Collection of React components for building modern web applications.
 
 Visit <b>[Storybook](https://blur-ui-storybook.vercel.app/)</b> to see the components in action.
 
-### Contributing
+## Contributing
 
-##### Install dependencies
+Please read the [contributing guide](/CONTRIBUTING.md).
 
-```bash
-make i
-```
+## License
 
-##### Running dev server
-
-```bash
-make dev
-```
-
-##### Building packages
-
-```bash
-make build
-```
+Licensed under the [MIT license](/LICENSE.md).

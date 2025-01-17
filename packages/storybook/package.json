@@ -8,8 +8,7 @@
   "type": "module",
   "scripts": {
     "dev": "bunx storybook dev -p 6006",
-    "build": "bunx storybook build",
-    "start": "bunx dlx http-server storybook-static"
+    "build": "bunx storybook build"
   },
   "dependencies": {
     "@blur-ui/slider": "workspace:*",

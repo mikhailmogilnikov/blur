@@ -1,16 +1,16 @@
 {
-  "name": "@blur-ui/slider",
-  "description": "The Slider component for React with ios-styled animations",
+  "name": "@blur-ui/js-utils",
+  "description": "The JS utils for Blur UI",
   "keywords": [
-    "slider",
+    "js",
     "react",
-    "motion",
+    "utils",
     "ui",
     "component",
     "ios"
   ],
   "author": "Mikhail Mogilnikov",
-  "version": "1.0.8",
+  "version": "1.0.0",
   "license": "MIT",
   "private": false,
   "type": "module",
@@ -20,9 +20,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mikhailmogilnikov/blur.git",
-    "directory": "packages/standalone/slider"
+    "directory": "packages/utilities/js-utils"
   },
-  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/slider",
+  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/utilities/js-utils",
   "bugs": {
     "url": "https://github.com/mikhailmogilnikov/blur/issues"
   },
@@ -43,21 +43,13 @@
   "files": [
     "dist"
   ],
-  "peerDependencies": {
-    "motion": ">=11.15.0",
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
-  },
-  "dependencies": {
-    "motion": "^11.15.0"
-  },
+  "peerDependencies": {},
+  "dependencies": {},
   "devDependencies": {
     "@blur-ui/typescript-config": "workspace:*",
     "@blur-ui/eslint-config": "workspace:*",
     "@blur-ui/tsup-config": "workspace:*",
     "eslint": "^9",
-    "tsup": "^8.3.5",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "tsup": "^8.3.5"
   }
 }
