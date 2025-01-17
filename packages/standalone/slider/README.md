@@ -15,7 +15,7 @@ This component relies on the `motion` library as a dependency.
 
 ## Requirements
 
-- `react` >= 16.0.0
+- `react` >= 18.0.0
 - `motion` >= 11.15.0
 
 ## Installation
