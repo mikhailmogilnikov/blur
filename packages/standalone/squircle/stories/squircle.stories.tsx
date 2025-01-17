@@ -11,7 +11,7 @@ export default {
     docs: {
       description: {
         component:
-          'The `Squircle` component is designed to render a squircle in React applications. Includes much modern features like automatic resizing with optional throttling delay, global smoothing value from CSS variable, and optional wrapper. Check [README](https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/squircle) for more details. \n\n[Npm](https://www.npmjs.com/package/@blur-ui/squircle) | [Github](https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/squircle)',
+          'The `Squircle` component is designed to render a squircle in React applications. Includes much modern features like automatic resizing with optional throttling delay, global smoothing value from CSS variable, and optional wrapper. Check [README](https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/squircle) for more details.\n\n<b>Try to set smoothing to 0 to see the difference between squircle and default border-radius.</b>\n\n[Npm](https://www.npmjs.com/package/@blur-ui/squircle) | [Github](https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/squircle)',
       },
     },
   },
@@ -86,13 +86,13 @@ export default {
 export const Default: StoryObj<typeof Squircle> = {
   argTypes: {},
   args: {
-    radius: 20,
     smoothing: 1,
+    radius: 30,
     resizeDelay: 100,
     disableSmoothing: false,
     disableResize: false,
     asChild: false,
-    className: 'w-30 h-30 bg-blue-400 rounded-2xl',
+    className: 'w-36 h-36 bg-blue-400 rounded-2xl',
   },
 };
 

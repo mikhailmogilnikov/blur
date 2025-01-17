@@ -11,7 +11,7 @@ export default {
     docs: {
       description: {
         component:
-          'The Slider component is a completely unstyled customizable UI element for React that allows users to select a value between 0 and 1. It supports both horizontal and vertical orientations and provides smooth animations for track movement and stretch effects.\n\nTry pan slider track out of bounds to see stretch effect.\n\n[Npm](https://www.npmjs.com/package/@blur-ui/slider) | [Github](https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/slider)',
+          'The Slider component is a completely unstyled customizable UI element for React that allows users to select a value between 0 and 1. It supports both horizontal and vertical orientations and provides smooth animations for track movement and stretch effects.\n\n<b>Try pan slider track out of bounds to see stretch effect.</b>\n\n[Npm](https://www.npmjs.com/package/@blur-ui/slider) | [Github](https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/slider)',
       },
     },
   },

@@ -12,6 +12,7 @@ This component relies on the `motion` library as a dependency.
 - Provides smooth animations for track movement and stretch effects.
 - Fully unstyled and customizable.
 - RTL support.
+- Keyboard support.
 
 ## Requirements
 

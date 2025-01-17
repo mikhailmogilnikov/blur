@@ -1,28 +1,44 @@
 {
-  "name": "@blur-ui/slider",
-  "description": "The Slider component for React with ios-styled animations",
+  "name": "@blur-ui/mesh-gradient",
+  "description": "The Mesh Gradient component for React",
   "keywords": [
-    "slider",
+    "mesh-gradient",
     "react",
-    "motion",
     "ui",
-    "component",
-    "ios"
+    "component"
   ],
   "author": "Mikhail Mogilnikov",
   "version": "1.0.10",
   "license": "MIT",
   "private": false,
-  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
   "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikhailmogilnikov/blur.git",
-    "directory": "packages/standalone/slider"
+    "url": "git+https://github.com/mikhailmogilnikov/blur.git",
+    "directory": "packages/standalone/mesh-gradient"
   },
-  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/slider",
+  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/mesh-gradient",
   "bugs": {
     "url": "https://github.com/mikhailmogilnikov/blur/issues"
   },
@@ -31,25 +47,13 @@
     "lint:fix": "eslint . --fix",
     "build": "tsup src/index.ts --format cjs,esm --dts"
   },
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.js"
-    }
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
   "peerDependencies": {
-    "motion": ">=11.15.0",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },
   "dependencies": {
-    "motion": "^11.15.0"
+    "@blur-ui/react-utils": "*",
+    "react-intersection-observer": "^9.15.0"
   },
   "devDependencies": {
     "@blur-ui/typescript-config": "workspace:*",
