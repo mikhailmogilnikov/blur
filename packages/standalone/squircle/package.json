@@ -7,13 +7,14 @@
     "ui",
     "component"
   ],
+  "type": "module",
   "author": "Mikhail Mogilnikov",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/mikhailmogilnikov/blur.git",
+    "url": "git+https://github.com/mikhailmogilnikov/blur.git",
     "directory": "packages/standalone/squircle"
   },
   "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/squircle",
@@ -26,13 +27,13 @@
     "build": "tsup src/index.ts --format cjs,esm --dts"
   },
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.cjs",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "types": "./dist/index.d.cts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./package.json": "./package.json"
   },
