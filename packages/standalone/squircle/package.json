@@ -9,7 +9,7 @@
   ],
   "type": "module",
   "author": "Mikhail Mogilnikov",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "license": "MIT",
   "private": false,
   "repository": {
@@ -26,8 +26,8 @@
     "lint:fix": "eslint . --fix",
     "build": "tsup src/index.ts --format cjs,esm --dts"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.cjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
