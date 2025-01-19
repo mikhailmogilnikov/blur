@@ -11,7 +11,7 @@ export default {
     docs: {
       description: {
         component:
-          'MeshGradient is a Spline-developed mesh gradient wrapper for React.\n\nIncludes build-in controls for animation duration, seed, opacity, themes, pause, darken mode and in viewport detection. Fully customizable – you can pass your own gradient palette.\n\n<b>Try all available themes, changing the theme prop below.</b>\n\n[Npm](https://www.npmjs.com/package/@blur-ui/mesh-gradient) | [Github](https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/mesh-gradient)',
+          'Uses to create a mesh gradient effect in React.\n\nIncludes build-in controls for animation duration, seed, opacity, different themes, pause, darken mode and in viewport detection. Fully customizable – you can pass your own gradient palette.\n\n<b>Try all available themes, changing the theme prop below.</b>\n\n[Npm](https://www.npmjs.com/package/@blur-ui/mesh-gradient) | [Github](https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/mesh-gradient)',
       },
     },
   },
