@@ -2,6 +2,8 @@
 
 The `MeshGradient` component is designed to render a Apple-like mesh gradient for React apps. It offers flexible customization options through various props.
 
+<b>[Live examples](https://blur-ui-storybook.vercel.app/?path=/docs/components-meshgradient--docs)</b>
+
 ## Features
 
 - Supports both horizontal and vertical orientations.

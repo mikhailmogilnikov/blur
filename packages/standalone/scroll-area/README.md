@@ -2,7 +2,7 @@
 
 Augments native scroll functionality for custom, cross-browser styling. Optionally applies shadows when content overflows on scroll.
 
-<b>[Live Examples](https://blur-ui-storybook.vercel.app/?path=/docs/components-scroll-area--docs)</b>
+<b>[Live Examples](https://blur-ui-storybook.vercel.app/?path=/docs/components-scrollarea--docs)</b>
 
 ## Features
 
