@@ -95,6 +95,16 @@ export default {
         category: 'Props',
       },
     },
+    fromStart: {
+      name: 'fromStart',
+      description: 'If set to true, the slider will start from the start of the track.',
+      type: 'boolean',
+      control: 'boolean',
+      defaultValue: false,
+      table: {
+        category: 'Props',
+      },
+    },
   },
   args: {
     value: 0.5,
@@ -129,6 +139,7 @@ export const Default = {
     classNames: sliderClassNames.horizontal,
     value: 0.5,
     whileTap: { scaleY: 1.2, opacity: 1 },
+    fromStart: true,
   },
 };
 

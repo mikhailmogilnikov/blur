@@ -11,10 +11,10 @@ import {
   animate,
 } from 'motion/react';
 import { forwardRef, KeyboardEventHandler, useEffect, useMemo, useRef } from 'react';
+import { useObjectRef } from '@blur-ui/react-utils';
 
 import { calculateStretchAnimation, getArrowAnimation, normValue } from './utils';
 import { SliderClassnames, SliderProps, SliderStyles } from './types';
-import { useObjectRef } from './use-object-ref';
 
 const DEFAULT_STRETCH_COEFFICIENT: number = 300;
 const DEFAULT_ARROW_STEP: number = 0.1;
@@ -74,6 +74,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
     disableStretch = false,
     children,
     isDisabled = false,
+    fromStart = false,
     onKeyDown,
     onKeyUp,
     onPan,
@@ -81,7 +82,7 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
     ...restProps
   } = props;
 
-  const sliderCoef = useMotionValue(0);
+  const sliderCoef = useMotionValue(fromStart ? 0 : value);
   const transitionCoef = useSpring(sliderCoef, trackTransition);
 
   const memoValue = useRef(sliderCoef.get());

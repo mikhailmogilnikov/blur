@@ -76,6 +76,7 @@ The `Slider` component accepts the following props:
 - **stretchCoefficient**: `number` (optional) - The coefficient that controls the amount of stretch applied. Default is `300`.
 - **dir**: `'ltr' | 'rtl'` (optional) - The direction of the slider. Default is `'ltr'`.
 - **isDisabled**: `boolean` (optional) - If set to true, disables the slider. Default is `false`.
+- **fromStart**: `boolean` (optional) - If set to true, the slider will start animating from the start of the track. Default is `false`.
 
 ## Examples
 

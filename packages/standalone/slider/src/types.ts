@@ -102,4 +102,10 @@ export interface SliderProps extends HTMLMotionProps<'div'> {
    * @default false
    */
   isDisabled?: boolean;
+
+  /**
+   * If set to true, the slider will start from the start of the track.
+   * @default false
+   */
+  fromStart?: boolean;
 }
