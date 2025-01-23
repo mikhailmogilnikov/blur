@@ -147,3 +147,17 @@ export const AsChildExample: StoryObj<typeof Squircle> = {
     },
   },
 };
+
+export const WithDifferentBorderRadius: StoryObj<typeof Squircle> = {
+  args: {
+    smoothing: 1,
+    className: 'w-30 h-30 bg-fuchsia-400 rounded-tl-3xl rounded-br-2xl rounded-tr-xl rounded-bl-sm',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story: 'Using different border radius values for each corner.',
+      },
+    },
+  },
+};

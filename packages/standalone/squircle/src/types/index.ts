@@ -11,7 +11,7 @@ export interface SquircleProps extends HTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
   /**
    * The smoothing value for the squircle. Can be a number between 0 and 1.
-   * @default 0
+   * @default 0.6 (iOS-like smoothing)
    */
   smoothing?: number;
   /**

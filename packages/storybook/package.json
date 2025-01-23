@@ -13,6 +13,8 @@
   "dependencies": {
     "@blur-ui/slider": "workspace:*",
     "@blur-ui/squircle": "workspace:*",
+    "@blur-ui/mesh-gradient": "workspace:*",
+    "@blur-ui/scroll-area": "workspace:*",
     "@tailwindcss/vite": "^4.0.0-beta.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
