@@ -30,14 +30,14 @@ yarn add @blur-ui/spinner
 ## Usage
 
 ```tsx
-<Spinner size='1.5rem' segmentsClassName='bg-white' />
+<Spinner size='1.5rem' segmentClassName='bg-white' />
 ```
 
 or
 
 ```tsx
 // Supports responsive sizes via CSS media queries
-<Spinner className='h-10 w-10 lg:h-20 lg:w-20' segmentsClassName='bg-white' />
+<Spinner className='h-10 w-10 lg:h-20 lg:w-20' segmentClassName='bg-white' />
 ```
 
 ## Props
