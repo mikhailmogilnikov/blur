@@ -11,7 +11,7 @@ export default {
     docs: {
       description: {
         component:
-          'Augments native scroll functionality for custom, cross-browser styling. Optionally applies shadows when content overflows on scroll.\n\n[Npm](https://www.npmjs.com/package/@blur-ui/scroll-area) | [Github](https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/scroll-area)',
+          'Augments native scroll functionality for custom, cross-browser styling. Optionally applies shadows when content overflows on scroll.\n\n[Npm](https://www.npmjs.com/package/@blur-ui/scroll-area) | [GitHub](https://github.com/mikhailmogilnikov/blur/tree/master/packages/standalone/scroll-area)',
       },
     },
   },
