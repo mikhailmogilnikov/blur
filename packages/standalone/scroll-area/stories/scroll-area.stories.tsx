@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ScrollArea } from '../src';
+import { ScrollArea } from '@blur-ui/scroll-area';
 
 export default {
   title: 'Components/ScrollArea',

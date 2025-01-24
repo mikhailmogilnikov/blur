@@ -10,6 +10,8 @@ import {
 
 export const useSetSmoothing = (smoothing: number | undefined) => {
   const componentSmoothing = useMemo(() => {
+    if (typeof document === 'undefined') return 0;
+
     // If the smoothing is passed as a prop, use it
     if (
       typeof smoothing !== 'undefined' &&

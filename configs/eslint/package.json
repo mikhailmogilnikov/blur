@@ -5,7 +5,8 @@
   "type": "module",
   "exports": {
     "./node": "./node.js",
-    "./react": "./react.js"
+    "./react": "./react.js",
+    "./next": "./next.js"
   },
   "peerDependencies": {
     "eslint": ">= 9"

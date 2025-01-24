@@ -42,8 +42,6 @@ or
 
 ## Props
 
-## Props
-
 - **size** (`string`)
 
   The size of the spinner (e.g., `'1rem'`, `'16px'`). If not provided, you can define width and height in the `classNames`.
