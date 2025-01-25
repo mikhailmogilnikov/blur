@@ -1,21 +1,24 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
 @custom-variant dark (&:where(.dark, .dark *));
 
+@source "../app";
+@source "../src";
+
+@plugin "../src/global/config/theme-plugin.ts";
+@import "./css/theme.css";
+
 @theme {
-  --color-background: hsl(0, 0%, 0%);
-  --color-foreground: hsl(0, 0%, 95%);
-  --color-link: hsl(216, 97%, 73%);
-  --color-default: hsl(0, 0%, 10%);
-
-  --color-primary: #b1a0e4;
+  --color-background: var(--theme-color-background);
+  --color-foreground: var(--theme-color-foreground);
+  --color-default: var(--theme-color-default);
 }
 
-:root {
+/* :root {
   --squircle-smoothing: 1;
-}
+} */
 
-@layer base {
+/* @layer base {
   .text-gradient {
-    @apply bg-gradient-to-tl from-primary to-foreground bg-clip-text text-transparent;
+    @apply from-primary to-foreground bg-gradient-to-tl bg-clip-text text-transparent;
   }
-}
+} */

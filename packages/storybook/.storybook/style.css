@@ -1,8 +1,15 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
 @variant dark (&:where(.dark, .dark *));
+
+@source "../../standalone/";
+@source "../../storybook/";
 
 :root {
   --bg-color: #0f0f0f;
+}
+
+@theme {
+  --color-razor: #0f0f0f;
 }
 
 .dark h1,

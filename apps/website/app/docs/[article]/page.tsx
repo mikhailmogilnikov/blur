@@ -7,5 +7,5 @@ interface DocsPageProps {
 export default async function Docs({ params }: DocsPageProps) {
   const article = await params;
 
-  return <div>{article.article}</div>;
+  return <div className="">{article.article}</div>;
 }

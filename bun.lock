@@ -159,7 +159,7 @@
     },
     "packages/standalone/squircle": {
       "name": "@blur-ui/squircle",
-      "version": "1.0.12",
+      "version": "1.0.15",
       "dependencies": {
         "@blur-ui/js-utils": "*",
         "@blur-ui/react-utils": "*",
@@ -188,10 +188,10 @@
         "@blur-ui/scroll-area": "workspace:*",
         "@blur-ui/slider": "workspace:*",
         "@blur-ui/squircle": "workspace:*",
-        "@tailwindcss/vite": "^4.0.0-beta.9",
+        "@tailwindcss/vite": "^4.0.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "tailwindcss": "^4.0.0-beta.9",
+        "tailwindcss": "^4.0.0",
       },
       "devDependencies": {
         "@blur-ui/eslint-config": "workspace:*",
@@ -240,6 +240,20 @@
       "peerDependencies": {
         "react": ">=18.0.0",
         "react-dom": ">=18.0.0",
+      },
+    },
+    "packages/utilities/tailwind-themes": {
+      "name": "@blur-ui/tailwind-themes",
+      "version": "1.0.0",
+      "dependencies": {
+        "color2k": "^2.0.3",
+      },
+      "devDependencies": {
+        "@blur-ui/eslint-config": "workspace:*",
+        "@blur-ui/tsup-config": "workspace:*",
+        "@blur-ui/typescript-config": "workspace:*",
+        "eslint": "^9",
+        "tsup": "^8.3.5",
       },
     },
   },
@@ -461,6 +475,8 @@
     "@blur-ui/squircle": ["@blur-ui/squircle@workspace:packages/standalone/squircle"],
 
     "@blur-ui/storybook": ["@blur-ui/storybook@workspace:packages/storybook"],
+
+    "@blur-ui/tailwind-themes": ["@blur-ui/tailwind-themes@workspace:packages/utilities/tailwind-themes"],
 
     "@blur-ui/tsup-config": ["@blur-ui/tsup-config@workspace:configs/tsup"],
 
@@ -1055,6 +1071,8 @@
     "color-name": ["color-name@1.1.4", "", {}, "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA=="],
 
     "color-string": ["color-string@1.9.1", "", { "dependencies": { "color-name": "^1.0.0", "simple-swizzle": "^0.2.2" } }, "sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg=="],
+
+    "color2k": ["color2k@2.0.3", "", {}, "sha512-zW190nQTIoXcGCaU08DvVNFTmQhUpnJfVuAKfWqUQkflXKpaDdpaYoM0iluLS9lgJNHyBF58KKA2FBEwkD7wog=="],
 
     "commander": ["commander@12.1.0", "", {}, "sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA=="],
 

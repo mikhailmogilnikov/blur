@@ -35,7 +35,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={clsx(
           sans.variable,
           mono.variable,
-          "bg-background text-foreground antialiased",
+          "text-foreground bg-background antialiased",
         )}
       >
         <Providers>{children}</Providers>

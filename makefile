@@ -19,5 +19,5 @@ make pre:
 make pub:
 	bun run publish-packages
 
-make clean:
+make reset:
 	rm -rf node_modules && make i

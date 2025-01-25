@@ -1,0 +1,59 @@
+{
+  "name": "@blur-ui/tailwind-themes",
+  "description": "The tailwind themes generator for React apps",
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "themes",
+    "react",
+    "ui"
+  ],
+  "author": "Mikhail Mogilnikov",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikhailmogilnikov/blur.git",
+    "directory": "packages/utilities/theme-generator"
+  },
+  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/utilities/theme-generator",
+  "bugs": {
+    "url": "https://github.com/mikhailmogilnikov/blur/issues"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "tsup src/index.ts --format cjs,esm --dts"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {},
+  "dependencies": {
+    "color2k": "^2.0.3"
+  },
+  "devDependencies": {
+    "@blur-ui/typescript-config": "workspace:*",
+    "@blur-ui/eslint-config": "workspace:*",
+    "@blur-ui/tsup-config": "workspace:*",
+    "eslint": "^9",
+    "tsup": "^8.3.5"
+  }
+}
