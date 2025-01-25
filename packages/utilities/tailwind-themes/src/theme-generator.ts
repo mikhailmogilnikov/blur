@@ -1,34 +1,74 @@
-import { ThemeConfig } from './types';
+import { generateColorVariablesFromObject, generateColorVariablesFromString } from './color-utils';
+import { generateLayoutVariables } from './layout-utils';
+import { Theme, ThemeColor, ThemeColorObject, ThemeColorScheme, ThemeConfig } from './types';
 
 const THEME_PREFIX = 'theme';
 
-type Variables = Record<string, string>;
+export type Variables = Record<string, string>;
 
-const generateColorVariables = (colors: Record<string, string>) => {
-  return Object.entries(colors)
-    .map(([key, value]) => {
-      return `--${key}: ${value};`;
-    })
-    .join('\n');
+const generateColorVariables = (
+  colors: Partial<Record<string, ThemeColor>>,
+  scheme: ThemeColorScheme,
+  prefix: string,
+) => {
+  const variablesArray = Object.entries(colors).map(([colorKey, colorValue]) => {
+    if (typeof colorValue === 'string') {
+      return generateColorVariablesFromString(colorKey, colorValue, prefix, scheme);
+    }
+
+    if (typeof colorValue === 'object') {
+      const colorObject = colorValue as ThemeColorObject;
+
+      return generateColorVariablesFromObject({ colorKey, colorObject, prefix, scheme });
+    }
+  });
+
+  return variablesArray.reduce((acc, variable) => {
+    return { ...acc, ...variable };
+  }, {});
+};
+
+const createThemeVariables = (theme: Theme, prefix: string) => {
+  const { colors, extendColors, layout, scheme } = theme;
+
+  let variables: Variables = {};
+
+  if (colors) {
+    const colorsVariables = generateColorVariables(colors, scheme, prefix);
+
+    variables = { ...colorsVariables };
+  }
+
+  if (extendColors) {
+    const extendColorsVariables = generateColorVariables(extendColors, scheme, prefix);
+
+    variables = { ...variables, ...extendColorsVariables };
+  }
+
+  if (layout) {
+    const layoutVariables = generateLayoutVariables(layout, prefix);
+
+    variables = { ...variables, ...layoutVariables };
+  }
+
+  return variables;
 };
 
 export const generateThemesVariables = (config: ThemeConfig) => {
   const prefix = THEME_PREFIX;
+  const defaultTheme = config.default;
   const themesList = config.themes;
 
   const themeVariables: Record<string, Variables> = {};
 
+  const defaultVariables = createThemeVariables(defaultTheme, prefix);
+
   Object.entries(themesList).map(([themeName, theme]) => {
     const cssSelector = `.${themeName}`;
-    const variables: Variables = {};
 
-    const { colors, extendColors, layout, scheme, useDefaultPalette = true } = theme;
+    const variables = createThemeVariables(theme, prefix);
 
-    Object.entries(colors).forEach(([colorKey, colorValue]) => {
-      console.log(colorKey, colorValue);
-    });
-
-    themeVariables[cssSelector] = variables;
+    themeVariables[cssSelector] = { ...defaultVariables, ...variables };
   });
 
   return themeVariables;

@@ -53,22 +53,65 @@ export type ThemeColorExtend = Partial<Record<string, ThemeColor>>;
 
 export type ThemeColors = Partial<Record<ThemeColorsEnum, ThemeColor>>;
 
+export enum ThemeLayoutSizesEnum {
+  XS = 'xs',
+  SM = 'sm',
+  MD = 'md',
+  LG = 'lg',
+  XL = 'xl',
+  '2XL' = '2xl',
+  '3XL' = '3xl',
+  '4XL' = '4xl',
+}
+
 export type ThemeLayout = {
   spacing: number;
-  borderRadius: number;
+  borderRadiuses: Partial<Record<ThemeLayoutSizesEnum, string>>;
 };
 
 export type Theme = {
-  useDefaultPalette?: boolean;
+  /**
+   * Uses to define how should generate the theme color palette
+   * @example 'light'
+   * 50 - lightest shade in the color palette
+   * 950 - darkest shade
+   * @example 'dark'
+   * 50 - darkest shade
+   * 950 - lightest shade
+   */
   scheme: ThemeColorScheme;
-  colors: ThemeColors;
-  extendColors?: ThemeColorExtend;
-  layout?: ThemeLayout;
-};
-
-type ThemeDefault = {
-  layout?: ThemeLayout;
+  /**
+   * Defines the theme colors
+   * @example
+   * ```ts
+   * {
+   *  background: '#fff',
+   *  foreground: {
+   *    color: '#000',
+   *    generatePalette: false, // if false, will not generate the palette from 50 to 950 for the color
+   *  },
+   * }
+   * ```
+   *
+   * Available colors:
+   * background, foreground, default, primary, secondary, tertiary, success, warning, danger, info, content1, content2, content3, content4, divider, focus, link
+   */
   colors?: ThemeColors;
+  /**
+   * Uses to define your own custom colors in palette
+   * @example {
+   *  card: '#444',
+   * }
+   */
+  extendColors?: ThemeColorExtend;
+  /**
+   * Uses to define tailwind layout properties
+   */
+  layout?: Partial<ThemeLayout>;
 };
 
-export type ThemeConfig = { themes: Record<string, Theme>; default?: ThemeDefault };
+export type ThemeConfig = {
+  useDefaultPalette?: boolean;
+  default?: Theme;
+  themes: Record<string, Theme>;
+};

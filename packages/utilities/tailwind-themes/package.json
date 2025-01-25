@@ -47,7 +47,8 @@
   ],
   "peerDependencies": {},
   "dependencies": {
-    "color2k": "^2.0.3"
+    "color2k": "^2.0.3",
+    "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
     "@blur-ui/typescript-config": "workspace:*",

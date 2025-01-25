@@ -22,13 +22,14 @@ interface ColorPalette {
 }
 
 const generateColorPalette = ({ colorKey, colorValue, prefix, scheme }: ColorPalette) =>
-  PALETTE_VARIABLES.map((variable) => {
+  PALETTE_VARIABLES.reduce((acc, variable) => {
     const lightness = getColorLightness(variable, scheme);
 
     return {
-      [`--${prefix}-${colorKey}-${variable}`]: `hsl(from ${colorValue} h s ${lightness}%)`,
+      ...acc,
+      [`--${prefix}-color-${colorKey}-${variable}`]: `hsl(from ${colorValue} h s ${lightness}%)`,
     };
-  });
+  }, {});
 
 export const generateColorVariablesFromString = (
   colorKey: string,
@@ -37,8 +38,8 @@ export const generateColorVariablesFromString = (
   scheme: ThemeColorScheme,
 ) => {
   return {
-    [`--${prefix}-${colorKey}`]: colorValue,
-    [`--${prefix}-${colorKey}-foreground`]: readableColor(colorValue),
+    [`--${prefix}-color-${colorKey}`]: colorValue,
+    [`--${prefix}-color-${colorKey}-foreground`]: readableColor(colorValue),
     ...generateColorPalette({ colorKey, colorValue, prefix, scheme }),
   };
 };
@@ -64,12 +65,12 @@ export const generateColorVariablesFromObject = ({
   } = colorObject;
 
   const generatedPaletteColors = Object.entries(paletteColors).map(([key, value]) => ({
-    [`--${prefix}-${colorKey}-${key}`]: value,
+    [`--${prefix}-color-${colorKey}-${key}`]: value,
   }));
 
   return {
-    [`--${prefix}-${colorKey}`]: defaultColor,
-    [`--${prefix}-${colorKey}-foreground`]: foregroundColor,
+    [`--${prefix}-color-${colorKey}`]: defaultColor,
+    [`--${prefix}-color-${colorKey}-foreground`]: foregroundColor,
 
     ...(generatePalette
       ? generateColorPalette({ colorKey, colorValue: defaultColor, prefix, scheme })

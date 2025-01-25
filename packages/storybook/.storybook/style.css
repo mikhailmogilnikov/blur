@@ -1,8 +1,9 @@
 @import 'tailwindcss' source(none);
-@variant dark (&:where(.dark, .dark *));
 
 @source "../../standalone/";
 @source "../../storybook/";
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --bg-color: #0f0f0f;

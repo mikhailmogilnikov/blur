@@ -1,21 +1,14 @@
 @import "tailwindcss" source(none);
-@custom-variant dark (&:where(.dark, .dark *));
+@plugin "../src/global/config/theme-plugin.ts";
 
 @source "../app";
 @source "../src";
 
-@plugin "../src/global/config/theme-plugin.ts";
-@import "./css/theme.css";
+@custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --color-background: var(--theme-color-background);
-  --color-foreground: var(--theme-color-foreground);
-  --color-default: var(--theme-color-default);
-}
-
-/* :root {
+:root {
   --squircle-smoothing: 1;
-} */
+}
 
 /* @layer base {
   .text-gradient {
