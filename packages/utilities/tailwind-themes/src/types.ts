@@ -1,3 +1,5 @@
+import { ThemeLayout } from './types-layout';
+
 export type ThemeColorScheme = 'light' | 'dark';
 
 export type ThemeColorOptions = {
@@ -52,22 +54,6 @@ export enum ThemeColorsEnum {
 export type ThemeColorExtend = Partial<Record<string, ThemeColor>>;
 
 export type ThemeColors = Partial<Record<ThemeColorsEnum, ThemeColor>>;
-
-export enum ThemeLayoutSizesEnum {
-  XS = 'xs',
-  SM = 'sm',
-  MD = 'md',
-  LG = 'lg',
-  XL = 'xl',
-  '2XL' = '2xl',
-  '3XL' = '3xl',
-  '4XL' = '4xl',
-}
-
-export type ThemeLayout = {
-  spacing: number;
-  borderRadiuses: Partial<Record<ThemeLayoutSizesEnum, string>>;
-};
 
 export type Theme = {
   /**

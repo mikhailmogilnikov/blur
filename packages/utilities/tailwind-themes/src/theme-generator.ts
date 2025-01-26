@@ -2,15 +2,11 @@ import { generateColorVariablesFromObject, generateColorVariablesFromString } fr
 import { generateLayoutVariables } from './layout-utils';
 import { Theme, ThemeColor, ThemeColorObject, ThemeColorScheme, ThemeConfig } from './types';
 
-const THEME_PREFIX = 'theme';
+export const THEME_PREFIX = 'theme';
 
 export type Variables = Record<string, string>;
 
-const generateColorVariables = (
-  colors: Partial<Record<string, ThemeColor>>,
-  scheme: ThemeColorScheme,
-  prefix: string,
-) => {
+const generateColorVariables = (colors: Partial<Record<string, ThemeColor>>, scheme: ThemeColorScheme, prefix: string) => {
   const variablesArray = Object.entries(colors).map(([colorKey, colorValue]) => {
     if (typeof colorValue === 'string') {
       return generateColorVariablesFromString(colorKey, colorValue, prefix, scheme);
@@ -21,6 +17,8 @@ const generateColorVariables = (
 
       return generateColorVariablesFromObject({ colorKey, colorObject, prefix, scheme });
     }
+
+    return {};
   });
 
   return variablesArray.reduce((acc, variable) => {
@@ -61,9 +59,9 @@ export const generateThemesVariables = (config: ThemeConfig) => {
 
   const themeVariables: Record<string, Variables> = {};
 
-  const defaultVariables = createThemeVariables(defaultTheme, prefix);
+  const defaultVariables = defaultTheme ? createThemeVariables(defaultTheme, prefix) : {};
 
-  Object.entries(themesList).map(([themeName, theme]) => {
+  Object.entries(themesList).forEach(([themeName, theme]) => {
     const cssSelector = `.${themeName}`;
 
     const variables = createThemeVariables(theme, prefix);

@@ -1,5 +1,5 @@
 import { Variables } from './theme-generator';
-import { ThemeLayout } from './types';
+import { ThemeLayout } from './types-layout';
 
 export const generateLayoutVariables = (layout: Partial<ThemeLayout>, prefix: string) => {
   const { spacing, borderRadiuses } = layout;
@@ -9,7 +9,7 @@ export const generateLayoutVariables = (layout: Partial<ThemeLayout>, prefix: st
   if (spacing) {
     variables = {
       ...variables,
-      [`--spacing`]: `${spacing}rem`,
+      [`--spacing`]: spacing,
     };
   }
 
@@ -18,6 +18,7 @@ export const generateLayoutVariables = (layout: Partial<ThemeLayout>, prefix: st
       ...variables,
       ...Object.entries(borderRadiuses).reduce((acc, [key, value]) => {
         return {
+          ...acc,
           [`--${prefix}-radius-${key}`]: value,
         };
       }, {}),

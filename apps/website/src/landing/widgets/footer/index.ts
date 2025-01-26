@@ -1,0 +1,1 @@
+export { LandingFooter } from "./ui";

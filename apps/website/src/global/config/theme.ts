@@ -4,7 +4,7 @@ export const APP_THEMES: ThemeConfig = {
   default: {
     scheme: "light",
     layout: {
-      spacing: 0.25,
+      spacing: "0.25rem",
       borderRadiuses: {
         md: "1rem",
       },
@@ -17,20 +17,24 @@ export const APP_THEMES: ThemeConfig = {
     light: {
       scheme: "light",
       colors: {
-        background: "#fff",
-        foreground: {
-          color: "#213",
+        background: {
+          color: "hsl(0, 0%, 95%)",
+          generatePalette: false,
         },
+        foreground: "hsl(0, 0%, 5%)",
+        default: "hsl(0, 0%, 100%)",
       },
     },
     dark: {
       scheme: "dark",
       colors: {
-        background: "#000",
-        foreground: {
-          color: "#fff",
+        background: {
+          color: "hsl(0, 0%, 0%)",
           generatePalette: false,
         },
+        foreground: "hsl(0, 0%, 95%)",
+        link: "hsl(216, 97%, 73%)",
+        default: "hsl(0, 0%, 10%)",
       },
     },
   },

@@ -1,22 +1,20 @@
-export default function Home() {
+"use cache";
+
+import { Flex } from "@/src/global/ui/flex";
+import { LandingHeader } from "@/src/landing/widgets/header";
+import { LandingGallery } from "@/src/landing/widgets/gallery";
+import { LandingFooter } from "@/src/landing/widgets/footer";
+
+export default async function Home() {
   return (
-    <div className="mx-auto flex max-w-screen-xl flex-col gap-6 p-4 xl:p-12">
-      <p className="text-primary">Hello</p>
-      {/* <h1 className="text-gradient text-7xl font-semibold">Blur.</h1>
-
-      <h2 className="text-3xl font-semibold">
-        <span className="brightness-50">
-          React components collection to add some{" "}
-        </span>
-        <span className="text-gradient">magic</span>
-        <span className="brightness-50"> to your apps.</span>
-      </h2>
-
-      <ScrollArea orientation="horizontal" type="always" className="mt-6">
-        <div className="flex flex-row gap-6">
-          <Squircle className="h-76 w-64 rounded-2xl bg-default"></Squircle>
-        </div>
-      </ScrollArea> */}
-    </div>
+    <Flex
+      as="main"
+      col
+      className="mx-auto max-w-screen-xl gap-14 p-4 py-12 xl:p-12"
+    >
+      <LandingHeader />
+      <LandingGallery />
+      <LandingFooter />
+    </Flex>
   );
 }
