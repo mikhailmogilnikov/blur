@@ -1,4 +1,4 @@
-import { tailwindThemePlugin } from "../../../../../packages/utilities/tailwind-themes/src";
+import { tailwindThemePlugin } from "@blur-ui/tailwind-themes";
 
 import { APP_THEMES } from "./theme";
 

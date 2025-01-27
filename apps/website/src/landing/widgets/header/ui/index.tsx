@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PiArrowRightBold } from "react-icons/pi";
 
 import { APP_ROUTES } from "@/src/global/config/app";
 import { Button } from "@/src/global/ui/button";
@@ -23,9 +24,10 @@ export const LandingHeader = () => {
       <Button
         as={Link}
         href={APP_ROUTES.DOCS_ARTICLE("getting-started")}
-        className="w-fit rounded-full bg-link/20 px-6 py-6 text-base font-semibold text-link"
+        className="w-fit gap-2 rounded-full bg-link/20 px-6 py-1.5 text-base font-semibold text-link"
       >
         Start exploring
+        <PiArrowRightBold className="text-xl" />
       </Button>
     </Flex>
   );

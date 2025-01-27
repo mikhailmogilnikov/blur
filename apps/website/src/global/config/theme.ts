@@ -1,6 +1,6 @@
-import { ThemeConfig } from "../../../../../packages/utilities/tailwind-themes/src";
+import { ThemeConfig } from "@blur-ui/tailwind-themes";
 
-export const APP_THEMES: ThemeConfig = {
+export const APP_THEMES = {
   default: {
     scheme: "light",
     layout: {
@@ -22,7 +22,9 @@ export const APP_THEMES: ThemeConfig = {
           generatePalette: false,
         },
         foreground: "hsl(0, 0%, 5%)",
+        link: "hsl(216, 100%, 64%)",
         default: "hsl(0, 0%, 100%)",
+        primary: "hsl(261, 91%, 76%)",
       },
     },
     dark: {
@@ -35,7 +37,8 @@ export const APP_THEMES: ThemeConfig = {
         foreground: "hsl(0, 0%, 95%)",
         link: "hsl(216, 97%, 73%)",
         default: "hsl(0, 0%, 10%)",
+        primary: "hsl(256, 54%, 87%)",
       },
     },
   },
-};
+} as const satisfies ThemeConfig;

@@ -8,11 +8,57 @@
 
 :root {
   --squircle-smoothing: 1;
-  
 }
 
-/* @layer base {
-  .text-gradient {
-    @apply from-primary to-foreground bg-gradient-to-tl bg-clip-text text-transparent;
+@theme {
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-base: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --animate-appear-zoom: appear-zoom 2.5s var(--ease-in-out);
+  --animate-popover-in: popover-in 0.3s var(--ease-base);
+  --animate-popover-out: popover-out 0.3s var(--ease-base);
+
+  @keyframes appear-zoom {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
-} */
+
+  @keyframes popover-in {
+    0% {
+      transform: scale(0.5);
+      filter: blur(10px);
+    }
+    100% {
+      transform: scale(1);
+      filter: blur(0px);
+    }
+  }
+
+  @keyframes popover-out {
+    0% {
+      transform: scale(1);
+      filter: blur(0px);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+      filter: blur(10px);
+    }
+  }
+}
+
+@layer base {
+  .text-gradient {
+    @apply bg-gradient-to-tl from-primary to-foreground bg-clip-text text-transparent;
+  }
+  .shadow-circle {
+    @apply bg-radial from-primary-100/50 from-0% to-transparent to-70% dark:from-primary-100;
+  }
+}

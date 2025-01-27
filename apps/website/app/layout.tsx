@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { Geist_Mono, Inter } from "next/font/google";
 import clsx from "clsx";
@@ -24,6 +24,15 @@ export const metadata: Metadata = {
   description: APP_CONFIG.description,
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  height: "device-height",
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 interface RootLayoutProps {
   children: React.ReactNode;
 }
@@ -31,11 +40,14 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
+      <head>
+        <meta name="theme-color" content="#000" />
+      </head>
       <body
         className={clsx(
           sans.variable,
           mono.variable,
-          "bg-background text-foreground antialiased",
+          "min-h-svh overflow-x-hidden overflow-y-auto bg-background text-foreground antialiased",
         )}
       >
         <Providers>{children}</Providers>

@@ -15,9 +15,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mikhailmogilnikov/blur.git",
-    "directory": "packages/utilities/theme-generator"
+    "directory": "packages/utilities/tailwind-themes"
   },
-  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/utilities/theme-generator",
+  "homepage": "https://github.com/mikhailmogilnikov/blur/tree/master/packages/utilities/tailwind-themes",
   "bugs": {
     "url": "https://github.com/mikhailmogilnikov/blur/issues"
   },

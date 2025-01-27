@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-yarn add @blur-ui/js-utils
+yarn add @blur-ui/tailwind-themes
 # or
-npm i @blur-ui/js-utils
+npm i @blur-ui/tailwind-themes
 ```

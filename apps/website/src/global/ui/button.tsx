@@ -48,7 +48,7 @@ export const Button = <T extends ElementType = "button">(
 };
 
 export const buttonTV = tv({
-  base: "inline-flex items-center justify-center font-medium transition-all cursor-pointer hover:brightness-90 active:scale-95 outline-none",
+  base: "inline-flex items-center justify-center font-medium transition-all cursor-pointer hover:brightness-90 active:scale-95 outline-none box-content",
   variants: {
     variant: {
       default: "bg-default text-default-foreground",

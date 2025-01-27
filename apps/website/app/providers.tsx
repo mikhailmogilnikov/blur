@@ -2,6 +2,8 @@
 
 import { ThemeProvider } from "next-themes";
 
+import { ThemeColorProvider } from "@/src/global/lib/providers/theme-color-provider";
+
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider
@@ -10,7 +12,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      {children}
+      <ThemeColorProvider>{children}</ThemeColorProvider>
     </ThemeProvider>
   );
 }
