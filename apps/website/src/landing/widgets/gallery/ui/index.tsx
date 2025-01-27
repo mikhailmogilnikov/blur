@@ -57,10 +57,13 @@ export const LandingGallery = () => {
           root: "max-lg:-ml-4 max-lg:w-[calc(100%+var(--spacing)*8)]",
         }}
       >
-        <Flex className="gap-6 max-lg:px-4 lg:gap-8">
+        <Flex className="gap-6 max-lg:px-4 py-1 lg:gap-8">
           {Array.from({ length: 5 }).map((_, index) => (
             <Flex key={index} className="flex-col gap-5">
-              <Squircle className="aspect-[64/76] w-60 rounded-2xl bg-default sm:w-76"></Squircle>
+              <Squircle
+                wrapperClassName="shadow-md rounded-[18px]"
+                className="aspect-[64/76] w-60 bg-default rounded-2xl sm:w-76"
+              ></Squircle>
               <Flex justify="between" align="center">
                 <Typo className="">Component</Typo>
                 <PiCaretRightBold className="text-xl" />
