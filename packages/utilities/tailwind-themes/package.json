@@ -1,15 +1,14 @@
 {
   "name": "@blur-ui/tailwind-themes",
-  "description": "The tailwind themes generator for React apps",
+  "description": "Ultimate Tailwind CSS themes generator.",
   "keywords": [
     "tailwind",
     "tailwindcss",
     "themes",
-    "react",
     "ui"
   ],
   "author": "Mikhail Mogilnikov",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "license": "MIT",
   "private": false,
   "repository": {

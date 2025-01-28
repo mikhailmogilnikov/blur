@@ -1,26 +1,67 @@
-# @blur-ui/tailwind-themes
+# Tailwind Themes
 
 Ultimate themes generator for Tailwind CSS 4.0.
 
 ## Features
 
-- [x] Automatic <b>color palette generation</b> for each color (from 50 to 950) – `bg-primary-300` etc.
-- [x] <b>Extend</b> the color palette with custom colors
-- [x] Configure app <b>layout</b> for each theme
-- [x] Automatic <b>readable</b> color generation for each color in theme (bg-primary > bg-primary-foreground)
-- [x] Optional disabling palette generation for each color by setting `generatePalette` to `false`
-- [x] Define <b>defaults</b> across all themes for your app – primary brand color, spacing, etc.
-- [x] Define <b>scheme</b> for theme. For `dark` mode, the palette will be generated in reverse order from 950 to 50. No needs to specify `bg-default-200 dark:bg-default-800` in className.
+- Automatic <b>color palette generation</b> for each color (from 50 to 950) – `bg-primary-300` etc.
+- <b>Extend</b> the color palette with custom colors
+- Configure app <b>layout</b> for each theme
+- Automatic <b>readable</b> color generation for each color in theme (bg-primary > bg-primary-foreground)
+- Optional disabling palette generation for each color by setting `generatePalette` to `false`
+- Define <b>defaults</b> across all themes for your app – primary brand color, spacing, etc.
+- Define <b>scheme</b> for theme. For `dark` mode, the palette will be generated in reverse order from 950 to 50. No needs to specify `bg-default-200 dark:bg-default-800` in className.
 
 ## Installation
 
 ```sh
-yarn add @blur-ui/tailwind-themes
-# or
 npm i @blur-ui/tailwind-themes
 ```
 
+# or
+
+```sh
+yarn add @blur-ui/tailwind-themes
+```
+
 ## Usage
+
+```ts
+export const AppThemes = {
+  default: DefaultTheme,
+  themes: {
+    light: {
+      scheme: 'light',
+      // Define colors for light theme of your app
+      colors: {
+        background: '#ffffff',
+        foreground: {
+          color: '#000000',
+          generatePalette: false, // Disable palette (50-950 shades) generation for this color
+        },
+        link: '#123456',
+        primary: '#123456',
+        secondary: '#123456',
+        warning: '#123456',
+        danger: '#123456',
+        success: '#123456',
+        info: '#123456',
+      },
+      extendColors: {
+        card: '#123456',
+      },
+      layout: {
+        spacing: '0.25rem',
+        transitionDuration: '0.25s',
+      },
+    },
+    dark: DarkTheme,
+    christmas: ChristmasTheme,
+  },
+} as const satisfies ThemeConfig;
+```
+
+## Setup
 
 Create a theme config file in your project.
 
@@ -56,7 +97,7 @@ Then, use the plugin in your root CSS file where you import `tailwindcss`.
 @custom-variant dark (&:where(.dark, .dark *));
 ```
 
-#### That's it!
+<b>That's it!</b>
 
 Now you can customize your theme configuration.
 
@@ -78,7 +119,7 @@ export const AppThemes = {
     dark: DarkTheme,
     christmas: ChristmasTheme,
   },
-} as const satisfies ThemeConfig;
+};
 ```
 
 ### Theme
@@ -128,15 +169,9 @@ import { tailwindThemePlugin } from '@blur-ui/tailwind-themes';
 import { AppThemes } from './config/theme.ts';
 
 const pluginOptions: PluginOptions = {
-   /**
-   * Remove default tailwind colors (like `slate-500`, `red-500`, etc.) from the color palette.
-   * @default false
-   */
-  removeTailwindColors: true;
-  /**
-   * Remove all default colors (default, foreground, background, etc.) from the color palette.
-   * @default false
-   */
+  // Remove default tailwind colors (like `slate-500`, `red-500`, etc.) from the color palette. Default: false
+  removeTailwindColors: true,
+  // Remove all default colors (default, foreground, background, etc.) from the color palette. Default: false
   removeDefaultColors: false,
 };
 
@@ -145,7 +180,7 @@ export default tailwindThemePlugin(AppThemes, pluginOptions);
 
 ### Types
 
-````ts
+```ts
 export type Theme = {
   // 'light' or 'dark'
   scheme: ThemeColorScheme;
@@ -163,7 +198,7 @@ export type Theme = {
    */
   layout?: ThemeLayout;
 };
-````
+```
 
 ##### Theme layout available properties:
 
