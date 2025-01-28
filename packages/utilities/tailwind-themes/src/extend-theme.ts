@@ -1,6 +1,7 @@
 import { Config } from 'tailwindcss';
 
 import { THEME_PREFIX, Variables } from './theme-generator';
+import { PluginOptions } from './plugin';
 
 const extendColorTheme = (themesVariables: Variables) => {
   const colorThemesVariables = Object.entries(themesVariables).reduce((acc, [themeName]) => {
@@ -18,14 +19,17 @@ const extendColorTheme = (themesVariables: Variables) => {
   return colorThemesVariables;
 };
 
-export const extendTheme = (themesVariables: Record<string, Variables>): Config['theme'] => {
+export const extendTheme = (themesVariables: Record<string, Variables>, options: Required<PluginOptions>): Config['theme'] => {
+  const { removeTailwindColors } = options;
+
   const mergedVariables: Variables = Object.values(themesVariables).reduce((acc, variables) => {
     return { ...acc, ...variables };
   }, {});
 
   return {
+    colors: removeTailwindColors ? extendColorTheme(mergedVariables) : undefined,
     extend: {
-      colors: extendColorTheme(mergedVariables),
+      colors: !removeTailwindColors ? extendColorTheme(mergedVariables) : undefined,
     },
   };
 };

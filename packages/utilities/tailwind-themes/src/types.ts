@@ -2,10 +2,6 @@ import { ThemeLayout } from './types-layout';
 
 export type ThemeColorScheme = 'light' | 'dark';
 
-export type ThemeColorOptions = {
-  generatePalette?: boolean;
-};
-
 export type ThemeColorPalette = Partial<{
   50: string;
   100: string;
@@ -93,11 +89,10 @@ export type Theme = {
   /**
    * Uses to define tailwind layout properties
    */
-  layout?: Partial<ThemeLayout>;
+  layout?: ThemeLayout;
 };
 
 export type ThemeConfig = {
-  useDefaultPalette?: boolean;
   default?: Theme;
   themes: Record<string, Theme>;
 };

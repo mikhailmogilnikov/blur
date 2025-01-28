@@ -44,7 +44,7 @@ const createThemeVariables = (theme: Theme, prefix: string) => {
   }
 
   if (layout) {
-    const layoutVariables = generateLayoutVariables(layout, prefix);
+    const layoutVariables = generateLayoutVariables(layout);
 
     variables = { ...variables, ...layoutVariables };
   }

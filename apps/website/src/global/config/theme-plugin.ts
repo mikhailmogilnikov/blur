@@ -1,5 +1,10 @@
-import { tailwindThemePlugin } from "@blur-ui/tailwind-themes";
+import { PluginOptions, tailwindThemePlugin } from "@blur-ui/tailwind-themes";
 
 import { APP_THEMES } from "./theme";
 
-export default tailwindThemePlugin(APP_THEMES);
+const pluginOptions: PluginOptions = {
+  removeTailwindColors: true,
+  removeDefaultColors: false,
+};
+
+export default tailwindThemePlugin(APP_THEMES, pluginOptions);
