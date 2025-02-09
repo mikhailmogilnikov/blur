@@ -24,10 +24,10 @@ export const LandingHeader = () => {
       <Button
         as={Link}
         href={APP_ROUTES.DOCS_ARTICLE("getting-started")}
-        className="w-fit gap-2 rounded-full bg-link/20 px-6 py-1.5 text-base font-semibold text-link"
+        className="group w-fit gap-2 rounded-full bg-link/20 px-6 py-1.5 text-base font-semibold text-link"
       >
         Start exploring
-        <PiArrowRightBold className="text-xl" />
+        <PiArrowRightBold className="text-xl transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
       </Button>
     </Flex>
   );
