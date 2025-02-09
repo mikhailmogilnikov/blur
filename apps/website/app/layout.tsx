@@ -31,6 +31,7 @@ export const viewport: Viewport = {
   minimumScale: 1,
   maximumScale: 1,
   userScalable: false,
+  viewportFit: "auto",
 };
 
 interface RootLayoutProps {

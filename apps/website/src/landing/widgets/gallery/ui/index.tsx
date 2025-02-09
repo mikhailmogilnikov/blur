@@ -1,13 +1,14 @@
 "use client";
 
 import { ScrollArea } from "@blur-ui/scroll-area";
-import { Squircle } from "@blur-ui/squircle";
 import { useRef } from "react";
 import clsx from "clsx";
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
 
 import { Flex } from "@/src/global/ui/flex";
-import { Typo } from "@/src/global/ui/typo";
+import { LandingCard } from "@/src/landing/entities/component/ui";
+import { ShowreelComponents } from "@/src/landing/entities/component/config/showreel-components";
+
 const SCROLL_AMOUNT = 300;
 
 export const LandingGallery = () => {
@@ -58,17 +59,8 @@ export const LandingGallery = () => {
         }}
       >
         <Flex className="gap-6 py-1 max-lg:px-4 lg:gap-8">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <Flex key={index} className="flex-col gap-5">
-              <Squircle
-                wrapperClassName="shadow-md rounded-[18px]"
-                className="aspect-[64/76] w-60 rounded-2xl bg-default sm:w-76"
-              ></Squircle>
-              <Flex justify="between" align="center">
-                <Typo className="">Component</Typo>
-                <PiCaretRightBold className="text-xl" />
-              </Flex>
-            </Flex>
+          {ShowreelComponents.map((component) => (
+            <LandingCard key={component.id} {...component} />
           ))}
         </Flex>
       </ScrollArea>
