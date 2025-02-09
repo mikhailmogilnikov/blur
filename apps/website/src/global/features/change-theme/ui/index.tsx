@@ -28,16 +28,17 @@ export const ChangeTheme = ({ children }: { children: React.ReactNode }) => {
     <Popover>
       <PopoverTrigger asChild>{children}</PopoverTrigger>
       <PopoverContent>
-        {Object.values(AppTheme).map((theme) => {
-          const Icon = AppThemeIcons[theme];
+        {Object.values(AppTheme).map((themeValue) => {
+          const Icon = AppThemeIcons[themeValue];
 
           return (
             <PopoverOption
-              key={theme}
+              key={themeValue}
+              data-active={theme === themeValue}
               endContent={<Icon size={16} />}
-              onClick={() => setTheme(theme)}
+              onClick={() => setTheme(themeValue)}
             >
-              {theme.charAt(0).toUpperCase() + theme.slice(1)}
+              {themeValue.charAt(0).toUpperCase() + themeValue.slice(1)}
             </PopoverOption>
           );
         })}

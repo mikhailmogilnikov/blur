@@ -12,6 +12,13 @@ const DynamicChangeTheme = dynamic(
   () => import("./change-theme").then((mod) => mod.ChangeThemeLanding),
   {
     ssr: false,
+    loading: () => (
+      <Skeleton
+        className="h-12 w-13.5 rounded-xl bg-default"
+        shadowClassName="bg-default-300"
+        animationDuration={0.5}
+      />
+    ),
   },
 );
 
@@ -30,15 +37,6 @@ export const LandingFooter = () => {
         </Button>
       </Squircle>
       <DynamicChangeTheme />
-      <Skeleton
-        className="h-10 w-40 rounded-lg bg-default"
-        shadowClassName="bg-default-300"
-        animationDuration={0.5}
-      />
-      <Skeleton
-        className="h-10 w-40 rounded-lg bg-default"
-        shadowClassName="bg-default-300"
-      />
     </Flex>
   );
 };
