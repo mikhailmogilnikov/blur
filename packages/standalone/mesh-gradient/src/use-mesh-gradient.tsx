@@ -3,12 +3,7 @@ import { CanvasHTMLAttributes, CSSProperties, useCallback, useId, useMemo } from
 
 import { MeshGradientProps } from './types';
 import { useControlPlayback } from './use-control-playback';
-import {
-  DEFAULT_ANIMATION_DURATION,
-  DEFAULT_OPACITY,
-  DEFAULT_SEED,
-  DEFAULT_THEME,
-} from './utils/defaults';
+import { DEFAULT_ANIMATION_DURATION, DEFAULT_OPACITY, DEFAULT_SEED, DEFAULT_THEME } from './utils/defaults';
 
 export const useMeshGradient = (props: MeshGradientProps) => {
   const {
@@ -21,6 +16,8 @@ export const useMeshGradient = (props: MeshGradientProps) => {
     isPaused = false,
     darken = false,
     colors,
+    width = 0,
+    height = 600,
     ...canvasProps
   } = props;
 
@@ -38,6 +35,8 @@ export const useMeshGradient = (props: MeshGradientProps) => {
     seed,
     isPaused,
     darken,
+    width,
+    height,
   });
 
   const canvasStyle: CSSProperties = useMemo(() => {

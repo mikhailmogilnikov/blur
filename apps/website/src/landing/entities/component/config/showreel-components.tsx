@@ -1,7 +1,11 @@
-import { MeshGradient } from "@blur-ui/mesh-gradient";
 import { Slider } from "@blur-ui/slider";
+import { Squircle } from "@blur-ui/squircle";
+import { MeshGradient } from "@blur-ui/mesh-gradient";
+import { Spinner } from "@blur-ui/spinner";
 
 import { ShowreelComponent } from "../model/showreel.type";
+
+import { Flex } from "@/src/global/ui/flex";
 
 export const ShowreelComponents: ShowreelComponent[] = [
   {
@@ -9,7 +13,9 @@ export const ShowreelComponents: ShowreelComponent[] = [
     name: "Mesh Gradient",
     slug: "mesh-gradient",
     content: () => {
-      return <MeshGradient className="h-full w-full" seed={4} />;
+      return (
+        <MeshGradient className="h-full w-full" width={304} height={368} />
+      );
     },
   },
   {
@@ -37,7 +43,11 @@ export const ShowreelComponents: ShowreelComponent[] = [
     name: "Squircle",
     slug: "squircle",
     content: () => {
-      return <div>Squircle</div>;
+      return (
+        <Flex col className="h-full w-full items-center justify-center">
+          <Squircle className="size-30 rounded-3xl bg-primary" smoothing={1} />
+        </Flex>
+      );
     },
   },
   {
@@ -45,7 +55,23 @@ export const ShowreelComponents: ShowreelComponent[] = [
     name: "Spinner",
     slug: "spinner",
     content: () => {
-      return <div>Spinner</div>;
+      return (
+        <Flex col className="h-full w-full items-center justify-center gap-6">
+          <Spinner className="size-6" segmentClassName="bg-foreground" />
+          <Spinner
+            className="size-8"
+            segmentClassName="bg-foreground"
+            animationDuration={0.5}
+            segments={12}
+          />
+          <Spinner
+            className="size-10"
+            segments={8}
+            animationDuration={1.5}
+            segmentClassName="bg-link"
+          />
+        </Flex>
+      );
     },
   },
   {

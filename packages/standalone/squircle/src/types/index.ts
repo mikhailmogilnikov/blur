@@ -55,7 +55,7 @@ export type StaticSquircleProps = Omit<
   /**
    * The border radiuses for the squircle.
    */
-  borderRadiuses: SquircleBorderRadiuses;
+  borderRadiuses?: SquircleBorderRadiuses;
 };
 
 export type SquircleBorderRadiuses = Partial<{

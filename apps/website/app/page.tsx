@@ -1,3 +1,5 @@
+"use cache";
+
 import { Suspense } from "react";
 
 import { Flex } from "@/src/global/ui/flex";

@@ -13,17 +13,7 @@ import { useSetSmoothing } from './use-set-smoothing';
  * ```
  */
 export const SquircleStatic = forwardRef<HTMLDivElement, StaticSquircleProps>((props, ref) => {
-  const {
-    radius,
-    width,
-    height,
-    asChild,
-    smoothing,
-    style,
-    borderRadiuses,
-    wrapperClassName,
-    ...restProps
-  } = props;
+  const { radius, width, height, asChild, smoothing, style, borderRadiuses, wrapperClassName, ...restProps } = props;
 
   const Component = asChild ? Slot : 'div';
 

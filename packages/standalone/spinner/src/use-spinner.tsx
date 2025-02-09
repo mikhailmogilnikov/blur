@@ -37,7 +37,6 @@ export const useSpinner = (props: SpinnerProps) => {
         position: 'relative' as const,
         '--spinner-size': size,
       },
-      key: segments,
       className: [spinnerId, className].join(' ').trimEnd(),
       'data-segments': segments,
       'data-size': size,
@@ -58,5 +57,6 @@ export const useSpinner = (props: SpinnerProps) => {
 
   return {
     buildSpinnerProps,
+    key: segments,
   };
 };

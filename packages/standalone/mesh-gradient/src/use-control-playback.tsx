@@ -14,6 +14,8 @@ interface UseControlPlaybackProps {
   seed: MeshGradientProps['seed'];
   isPaused: MeshGradientProps['isPaused'];
   darken: MeshGradientProps['darken'];
+  width: MeshGradientProps['width'];
+  height: MeshGradientProps['height'];
 }
 
 export const useControlPlayback = ({
@@ -25,6 +27,8 @@ export const useControlPlayback = ({
   seed,
   isPaused,
   darken,
+  width,
+  height,
 }: UseControlPlaybackProps) => {
   const gradient = useRef<Gradient | null>(null);
 
@@ -67,7 +71,7 @@ export const useControlPlayback = ({
 
   useEffect(() => {
     if (!gradient.current) {
-      const gradientObj = new Gradient({ seed });
+      const gradientObj = new Gradient({ seed, width, height });
 
       gradientObj.initGradient(`#${canvasId}`);
       gradient.current = gradientObj;
