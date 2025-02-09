@@ -2,10 +2,16 @@ import { Spinner } from "@blur-ui/spinner";
 
 import { Flex } from "@/src/global/ui/flex";
 
-export default function Loading() {
+export const FullscreenLoading = () => {
   return (
     <Flex col className="h-svh w-svw items-center justify-center">
       <Spinner className="size-7" segmentClassName="bg-foreground" />
     </Flex>
   );
+};
+
+export default async function Loading() {
+  "use cache";
+
+  return <FullscreenLoading />;
 }
