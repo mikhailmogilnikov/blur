@@ -1,34 +1,26 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback, useId, useMemo } from 'react';
 
 import { SpinnerProps } from './types';
 
-const SpinnerStyles = '.spinner { width: var(--spinner-size); height: var(--spinner-size); }';
-const SpinnerSegmentStyles = `.spinner-segment { width: 10%; height: 30%; position: absolute; top: 38%; left: 48%; border-radius: 9999px; animation: spinner infinite linear; } @keyframes spinner { 0% { opacity: 0; } 5% { opacity: 1; } 100% { opacity: 0; } }`;
+const SpinnerStyles = (id: string) => `@layer base { .${id} { width: var(--spinner-size); height: var(--spinner-size); } }`;
+const SpinnerSegmentStyles = (id: string) =>
+  `@layer base { .${id}-segment { width: 10%; height: 30%; position: absolute; top: 38%; left: 48%; border-radius: 9999px; animation: ${id} infinite linear; } @keyframes ${id} { 0% { opacity: 0; } 5% { opacity: 1; } 100% { opacity: 0; } } }`;
 
 export const useSpinner = (props: SpinnerProps) => {
-  const {
-    size,
-    segments = 10,
-    animationDuration = 1.2,
-    style,
-    className,
-    segmentClassName,
-    ...restProps
-  } = props;
+  const { size, segments = 10, animationDuration = 1.2, style, className, segmentClassName, ...restProps } = props;
+
+  const uniqueId = useId().replace(/:/g, '');
+  const spinnerId = `spinner-${uniqueId}`;
 
   const segmentsArray = useMemo(() => [...Array(segments).keys()], [segments]);
   const deg = useMemo(() => 360 / segmentsArray.length, [segmentsArray]);
-  const animationTime = useMemo(
-    () => animationDuration / segmentsArray.length,
-    [animationDuration, segmentsArray],
-  );
+  const animationTime = useMemo(() => animationDuration / segmentsArray.length, [animationDuration, segmentsArray]);
 
   const buildSpinnerSegments = useCallback(() => {
     return segmentsArray.map((segment) => (
       <div
         key={segment}
-        role='spinner-segment'
-        className={['spinner-segment', `spinner-segment-${segment}`, segmentClassName].join(' ')}
+        className={[`${spinnerId}-segment`, `${spinnerId}-segment-${segment}`, segmentClassName].join(' ').trimEnd()}
         style={{
           animationDuration: `${animationDuration}s`,
           transform: `rotate(${deg * segment}deg) translateY(-120%)`,
@@ -36,7 +28,7 @@ export const useSpinner = (props: SpinnerProps) => {
         }}
       />
     ));
-  }, [segmentsArray, deg, animationTime, segmentClassName]);
+  }, [segmentsArray, deg, animationTime, segmentClassName, spinnerId]);
 
   const buildSpinnerProps = useCallback(() => {
     return {
@@ -46,8 +38,7 @@ export const useSpinner = (props: SpinnerProps) => {
         '--spinner-size': size,
       },
       key: segments,
-      className: ['spinner', className].join(' '),
-      role: 'spinner',
+      className: [spinnerId, className].join(' ').trimEnd(),
       'data-segments': segments,
       'data-size': size,
       'data-animation-duration': animationDuration,
@@ -55,7 +46,7 @@ export const useSpinner = (props: SpinnerProps) => {
         <>
           <style
             dangerouslySetInnerHTML={{
-              __html: [size ? SpinnerStyles : '', SpinnerSegmentStyles].join(' '),
+              __html: [size ? SpinnerStyles(spinnerId) : '', SpinnerSegmentStyles(spinnerId)].join(' ').trimEnd(),
             }}
           />
           {buildSpinnerSegments()}
@@ -63,7 +54,7 @@ export const useSpinner = (props: SpinnerProps) => {
       ),
       ...restProps,
     };
-  }, [size, segments, animationDuration, style, segmentClassName, className, restProps]);
+  }, [size, segments, animationDuration, style, segmentClassName, className, restProps, spinnerId]);
 
   return {
     buildSpinnerProps,

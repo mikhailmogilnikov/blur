@@ -3,6 +3,7 @@
 import { Squircle } from "@blur-ui/squircle";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { Skeleton } from "@blur-ui/skeleton";
 
 import { Flex } from "@/src/global/ui/flex";
 import { Button } from "@/src/global/ui/button";
@@ -29,6 +30,15 @@ export const LandingFooter = () => {
         </Button>
       </Squircle>
       <DynamicChangeTheme />
+      <Skeleton
+        className="h-10 w-40 rounded-lg bg-default"
+        shadowClassName="bg-default-300"
+        animationDuration={0.5}
+      />
+      <Skeleton
+        className="h-10 w-40 rounded-lg bg-default"
+        shadowClassName="bg-default-300"
+      />
     </Flex>
   );
 };

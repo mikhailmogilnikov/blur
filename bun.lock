@@ -4,18 +4,18 @@
     "": {
       "name": "blur-ui",
       "devDependencies": {
-        "@changesets/cli": "^2.27.11",
-        "@testing-library/react": "^16.1.0",
+        "@changesets/cli": "^2.27.12",
+        "@testing-library/react": "^16.2.0",
         "@types/bun": "latest",
-        "@types/react": "^19.0.4",
-        "@types/react-dom": "^19.0.2",
+        "@types/react": "^19.0.8",
+        "@types/react-dom": "^19.0.3",
         "prettier": "^3.4.2",
         "prettier-plugin-tailwindcss": "^0.6.11",
-        "turbo": "^2.3.3",
-        "typescript": "^5",
+        "turbo": "^2.4.0",
+        "typescript": "^5.7.3",
       },
       "peerDependencies": {
-        "bun": ">=1.1.43",
+        "bun": "^1.2.0",
       },
     },
     "apps/website": {
@@ -23,6 +23,7 @@
       "version": "0.1.0",
       "dependencies": {
         "@blur-ui/scroll-area": "^1.0.1",
+        "@blur-ui/skeleton": "^1.0.0",
         "@blur-ui/squircle": "^1.0.15",
         "@blur-ui/tailwind-themes": "^1.0.0",
         "@radix-ui/react-popover": "^1.1.5",
@@ -119,6 +120,23 @@
       "peerDependencies": {
         "react": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
         "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc",
+      },
+    },
+    "packages/standalone/skeleton": {
+      "name": "@blur-ui/skeleton",
+      "version": "1.0.1",
+      "devDependencies": {
+        "@blur-ui/eslint-config": "workspace:*",
+        "@blur-ui/tsup-config": "workspace:*",
+        "@blur-ui/typescript-config": "workspace:*",
+        "eslint": "^9",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "tsup": "^8.3.5",
+      },
+      "peerDependencies": {
+        "react": "^18.0 || ^19.0 || ^19.0.0-rc",
+        "react-dom": "^18.0 || ^19.0 || ^19.0.0-rc",
       },
     },
     "packages/standalone/slider": {
@@ -471,6 +489,8 @@
     "@blur-ui/react-utils": ["@blur-ui/react-utils@workspace:packages/utilities/react-utils"],
 
     "@blur-ui/scroll-area": ["@blur-ui/scroll-area@workspace:packages/standalone/scroll-area"],
+
+    "@blur-ui/skeleton": ["@blur-ui/skeleton@workspace:packages/standalone/skeleton"],
 
     "@blur-ui/slider": ["@blur-ui/slider@workspace:packages/standalone/slider"],
 
