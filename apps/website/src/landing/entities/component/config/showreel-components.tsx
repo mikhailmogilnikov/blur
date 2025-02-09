@@ -21,8 +21,8 @@ export const ShowreelComponents: ShowreelComponent[] = [
         <div className="flex h-full w-full items-center justify-center">
           <Slider
             classNames={{
-              base: "w-20 h-56 bg-foreground/10 rounded-3xl outline-offset-2 outline-foreground/50 focus-visible:outline",
-              track: "bg-foreground/20 dark:bg-foreground/80",
+              base: "w-20 h-50 bg-foreground/30 dark:bg-foreground/10 rounded-3xl outline-offset-2 outline-foreground/50 focus-visible:outline",
+              track: "bg-default-100 dark:bg-foreground/80",
             }}
             orientation="vertical"
             value={0.5}
