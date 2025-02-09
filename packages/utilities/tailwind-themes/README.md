@@ -18,7 +18,7 @@ Ultimate themes generator for Tailwind CSS 4.0.
 npm i @blur-ui/tailwind-themes
 ```
 
-# or
+or
 
 ```sh
 yarn add @blur-ui/tailwind-themes
@@ -26,12 +26,13 @@ yarn add @blur-ui/tailwind-themes
 
 ## Usage
 
+Configure your themes
+
 ```ts
 export const AppThemes = {
   default: DefaultTheme,
   themes: {
     light: {
-      scheme: 'light',
       // Define colors for light theme of your app
       colors: {
         background: '#ffffff',
@@ -41,11 +42,10 @@ export const AppThemes = {
         },
         link: '#123456',
         primary: '#123456',
-        secondary: '#123456',
         warning: '#123456',
         danger: '#123456',
         success: '#123456',
-        info: '#123456',
+        // other colors
       },
       extendColors: {
         card: '#123456',
@@ -53,12 +53,19 @@ export const AppThemes = {
       layout: {
         spacing: '0.25rem',
         transitionDuration: '0.25s',
+        // other layout properties
       },
     },
     dark: DarkTheme,
     christmas: ChristmasTheme,
   },
 } as const satisfies ThemeConfig;
+```
+
+Use it with automatically generated Tailwind CSS class utilities.
+
+```html
+<div class="bg-primary-300 text-primary-foreground">Hello, world!</div>
 ```
 
 ## Setup

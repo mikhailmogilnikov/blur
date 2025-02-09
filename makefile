@@ -1,23 +1,23 @@
-make i:
+i:
 	bun i
 
-make dev:
+dev:
 	bun run dev
 
-make test:
+test:
 	bun run test
 
-make lint:
+lint:
 	bun run lint
 
-make build:
+build:
 	bun run build
 
-make pre:
+pre:
 	npm run prepack
 	
-make pub:
+pub:
 	bun run publish-packages
 
-make reset:
+reset:
 	rm -rf node_modules && make i

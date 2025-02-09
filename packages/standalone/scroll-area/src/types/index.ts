@@ -56,9 +56,7 @@ export interface ScrollAreaClassNames {
 /**
  * Props for the ScrollArea component.
  */
-export interface ScrollAreaProps
-  extends ScrollAreaRootProps,
-    Omit<UseDataScrollOverflowProps, 'domRef'> {
+export interface ScrollAreaProps extends ScrollAreaRootProps, Omit<UseDataScrollOverflowProps, 'domRef'> {
   viewportProps?: ScrollAreaViewportProps;
   scrollbarProps?: ScrollAreaScrollbarProps;
   verticalScrollbarProps?: ScrollAreaScrollbarProps;
@@ -88,4 +86,9 @@ export interface ScrollAreaProps
    * @default false
    */
   disableShadow?: boolean;
+  /**
+   * The type of scrollbar to use.
+   * @default 'synthetic'
+   */
+  scrollbar?: 'synthetic' | 'native' | 'hide';
 }
