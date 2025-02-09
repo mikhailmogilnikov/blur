@@ -11,7 +11,7 @@ export function LandingCard(props: ShowreelComponent) {
     <Flex className="flex-col gap-5">
       <Squircle
         wrapperClassName="shadow-md rounded-[18px]"
-        className="aspect-[64/76] w-60 rounded-2xl bg-default sm:w-76"
+        className="h-74 w-60 rounded-2xl bg-default sm:h-92 sm:w-76"
       >
         {props.content({})}
       </Squircle>
