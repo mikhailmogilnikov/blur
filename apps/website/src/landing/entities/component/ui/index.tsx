@@ -12,8 +12,9 @@ export function LandingCard(props: ShowreelComponent) {
   return (
     <Flex
       as={Link}
-      href={APP_ROUTES.DOCS_ARTICLE(props.slug)}
+      href={APP_ROUTES.DOCS_ARTICLE(props.slug as "getting-started")}
       className="flex-col gap-5"
+      draggable={false}
     >
       <Squircle
         wrapperClassName="shadow-md rounded-[18px]"

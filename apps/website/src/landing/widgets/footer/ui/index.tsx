@@ -25,7 +25,7 @@ const DynamicChangeTheme = dynamic(
 export const LandingFooter = () => {
   return (
     <Flex as="footer" wrap className="gap-4">
-      <Squircle asChild>
+      <Squircle asChild wrapperClassName="shadow-md rounded-xl">
         <Button
           as={Link}
           target="_blank"

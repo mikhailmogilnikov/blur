@@ -2,6 +2,7 @@ import { Slider } from "@blur-ui/slider";
 import { Squircle } from "@blur-ui/squircle";
 import { MeshGradient } from "@blur-ui/mesh-gradient";
 import { Spinner } from "@blur-ui/spinner";
+import { ScrollArea } from "@blur-ui/scroll-area";
 
 import { ShowreelComponent } from "../model/showreel.type";
 
@@ -79,7 +80,33 @@ export const ShowreelComponents: ShowreelComponent[] = [
     name: "Scroll Area",
     slug: "scroll-area",
     content: () => {
-      return <div>Scroll Area</div>;
+      return (
+        <Flex col className="h-full w-full items-center justify-center gap-6">
+          <ScrollArea
+            type="always"
+            classNames={{
+              root: "w-4/5 h-4/5",
+              verticalScrollbar: "w-2",
+              thumb:
+                "bg-foreground/20 hover:bg-foreground/40 transition-colors  rounded-full",
+            }}
+          >
+            <p className="text-md font-medium">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              quos. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum
+              dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              quos.
+            </p>
+          </ScrollArea>
+        </Flex>
+      );
     },
   },
 ];
