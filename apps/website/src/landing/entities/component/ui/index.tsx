@@ -12,7 +12,7 @@ export function LandingCard(props: ShowreelComponent) {
   return (
     <Flex
       as={Link}
-      href={APP_ROUTES.DOCS_ARTICLE(props.slug as "getting-started")}
+      href={APP_ROUTES.DOCS.COMPONENT(props.slug)}
       className="flex-col gap-5"
       draggable={false}
     >

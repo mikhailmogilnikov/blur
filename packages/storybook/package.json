@@ -15,10 +15,10 @@
     "@blur-ui/squircle": "workspace:*",
     "@blur-ui/mesh-gradient": "workspace:*",
     "@blur-ui/scroll-area": "workspace:*",
-    "@tailwindcss/vite": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.0"
+    "tailwindcss": "^4.0.9"
   },
   "devDependencies": {
     "@blur-ui/eslint-config": "workspace:*",

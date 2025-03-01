@@ -6,6 +6,7 @@ import { Geist_Mono, Inter } from "next/font/google";
 import clsx from "clsx";
 
 import Providers from "./providers";
+import { baseUrl } from "./sitemap";
 
 import { APP_CONFIG } from "@/src/global/config/app";
 
@@ -20,8 +21,28 @@ const mono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: APP_CONFIG.name,
+  metadataBase: new URL(baseUrl),
+  title: { default: APP_CONFIG.name, template: `%s | ${APP_CONFIG.name}` },
   description: APP_CONFIG.description,
+  openGraph: {
+    title: APP_CONFIG.name,
+    description: APP_CONFIG.description,
+    url: baseUrl,
+    siteName: APP_CONFIG.name,
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export const viewport: Viewport = {

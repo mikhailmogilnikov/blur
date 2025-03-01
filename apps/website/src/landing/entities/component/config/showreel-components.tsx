@@ -22,7 +22,7 @@ export const ShowreelComponents: ShowreelComponent[] = [
   {
     id: 2,
     name: "Slider",
-    slug: "slider",
+    slug: "slider" as any,
     content: () => {
       return (
         <div className="flex h-full w-full items-center justify-center">
@@ -86,7 +86,7 @@ export const ShowreelComponents: ShowreelComponent[] = [
             type="always"
             classNames={{
               root: "w-4/5 h-4/5",
-              verticalScrollbar: "w-2",
+              verticalScrollbar: "w-1.5",
               thumb:
                 "bg-foreground/20 hover:bg-foreground/40 transition-colors  rounded-full",
             }}

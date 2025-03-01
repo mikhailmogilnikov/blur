@@ -23,7 +23,7 @@ export const LandingHeader = () => {
 
       <Button
         as={Link}
-        href={APP_ROUTES.DOCS_ARTICLE("getting-started")}
+        href={APP_ROUTES.DOCS.GUIDE("getting-started")}
         className="group w-fit gap-2 rounded-full bg-link/20 px-6 py-1.5 text-base font-semibold text-link"
       >
         Start exploring

@@ -15,7 +15,7 @@ export const ChangeThemeLanding = () => {
 
   return (
     <ChangeTheme>
-      <Squircle asChild wrapperClassName="shadow-md rounded-xl">
+      <Squircle asChild>
         <Button className="gap-1 rounded-xl bg-default px-4 py-1 font-semibold">
           <ThemeIcon size={22} />
         </Button>

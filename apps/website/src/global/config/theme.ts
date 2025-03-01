@@ -5,6 +5,7 @@ export const APP_THEMES = {
     scheme: "light",
     layout: {
       spacing: "0.25rem",
+      transitionDuration: "0.3s",
     },
     colors: {
       primary: "#444",

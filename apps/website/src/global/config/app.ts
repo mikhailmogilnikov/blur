@@ -1,14 +1,21 @@
 export const APP_CONFIG = {
-  name: "Blur UI",
-  description: "The modern and flexible design system for your next project.",
+  name: "Blur",
+  description: "The modern and flexible design system for your React project.",
 } as const;
 
-enum DocsArticles {
+export enum DocsGuides {
   GETTING_STARTED = "getting-started",
-  
+}
+
+export enum DocsComponents {
+  MESH_GRADIENT = "mesh-gradient",
 }
 
 export const APP_ROUTES = {
   HOME: "/",
-  DOCS_ARTICLE: (article: `${DocsArticles}`) => `/docs/${article}`,
+  DOCS: {
+    GUIDE: (guide: `${DocsGuides}`) => `/docs/guides/${guide}`,
+    COMPONENT: (component: `${DocsComponents}`) =>
+      `/docs/components/${component}`,
+  },
 } as const;

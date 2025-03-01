@@ -1,5 +1,3 @@
-"use cache";
-
 import { Flex } from "@/src/global/ui/flex";
 import { LandingHeader } from "@/src/landing/widgets/header";
 import { LandingGallery } from "@/src/landing/widgets/gallery";
